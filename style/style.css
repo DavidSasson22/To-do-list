@@ -1,0 +1,119 @@
+@font-face {
+  font-family: Handlee-Regular;
+  src: url(../fonts/Handlee-Regular.ttf);
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Handlee-Regular;
+  --text-color: #333;
+  color: var(--text-color);
+  background-color: #f6f4d2;
+}
+.container {
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  color: #181818;
+  min-height: 90vh;
+  margin-top: 2%;
+}
+.todo {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  background: #a44a3f;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: #ECE6D8;
+}
+h1 {
+  margin-bottom: 0px;
+  font-size: 60px;
+  line-height: 24px;
+}
+
+P {
+  line-height: 32px;
+}
+
+
+input {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 0 8px 0 8px;
+  font-size: 20px;
+}
+input:hover {
+  cursor: pointer;
+}
+.list-todo {
+  height: 60vh;
+  background-color: #cbdfbd;
+  overflow-x: scroll;
+}
+#todo {
+  padding: 0 10px 0 10px;
+}
+#todo li {
+  list-style: none;
+  font-size: 16px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  --webkit-display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: justify;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #777777;
+  padding-bottom: 8px;
+  font-family: Handlee-Regular;
+}
+#todo li.completed {
+  text-decoration: line-through;
+}
+
+#todo li.uncompleted {
+  text-decoration: none;
+  color: black;
+}
+#todo li input {
+  margin-right: 10px;
+  align-self: center;
+}
+#todo li button {
+  outline: none;
+  border: none;
+  border-radius: 200px;
+  margin-left: 10px;
+  background-color: #ffffff;
+  color: #565E50;
+  align-self: center;
+  height: 5vh;
+}
+
+#todo li button:hover {
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: #ECE6D8;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  color: #ECE6D8;
+}
+
+::placeholder {
+  color: #ECE6D8;
+}
+
+i {
+  color:#f19c79;
+}
