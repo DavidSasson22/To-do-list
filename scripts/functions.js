@@ -30,6 +30,7 @@ const firstLoadUpdate = () => {
         let temp = myList.tasks[i];
         myList.delete(i);
         myList.tasks.push(temp);
+        localStorage.setItem("todos", JSON.stringify(myList));
       }
       else {
         item.classList.add("uncompleted");
@@ -37,6 +38,7 @@ const firstLoadUpdate = () => {
         checkbox.checked = myList.tasks[i].completed;
         myList.tasks[i].yet;
         myList.tasks[i].update;
+        localStorage.setItem("todos", JSON.stringify(myList));
       }
     });
 
@@ -121,13 +123,20 @@ const render = () => {
         let temp = myList.tasks[i];
         myList.delete(i);
         myList.tasks.push(temp);
+        localStorage.setItem("todos", JSON.stringify(myList));
+        render()
+
       }
       else {
         item.classList.add("uncompleted");
         item.classList.remove("completed");
         checkbox.checked = myList.tasks[i].completed;
         myList.tasks[i].yet;
-        myList.tasks[i].update;
+        let temp = myList.tasks[i];
+        myList.delete(i);
+        myList.tasks.unshift(temp);
+        localStorage.setItem("todos", JSON.stringify(myList));
+        render()
       }
     });
 
