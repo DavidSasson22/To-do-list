@@ -25,6 +25,9 @@ body {
   width: 100%;
   padding-top: 12px;
   padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #a44a3f;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -39,7 +42,7 @@ h1 {
 }
 
 P {
-  line-height: 32px;
+  line-height: 20px;
 }
 
 
@@ -49,7 +52,7 @@ input {
   border: none;
   border-bottom: 2px solid #ffffff;
   color: #ffffff;
-  padding: 16px 8px 0px 8px;
+  padding: 0px 8px 0px 8px;
   font-size: 20px;
   animation: blink 1.5s ease-in-out infinite alternate;
 }
