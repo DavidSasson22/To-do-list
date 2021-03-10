@@ -120,8 +120,10 @@ let todos = localStorage.getItem("todos");
 todos = JSON.parse(todos);
 
 const myList = new ToDoList;
-if (todos.tasks.length > 0) {
-  myList.tasks = todos.tasks
+if (todos.tasks !== undefined) {
+  if (todos.tasks.length > 0) {
+    myList.tasks = todos.tasks
+  }
 };
 
 todos = JSON.stringify(todos);
