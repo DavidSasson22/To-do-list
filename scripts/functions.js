@@ -1,23 +1,21 @@
 
-const render = (list, localStorage) => {
+const render = () => {
   console.log(`render activated`);
-  console.log(list);
-  console.log(localStorage);
   todo.innerHTML = null;
 
 
   const todos = localStorage.getItem("todos");
-  list.tasks = JSON.parse(todos) || [];
+  myUpList = JSON.parse(todos) || [];
+  myList.tasks = myUpList.tasks;
 
-  for (let i = 0; i < list.tasks.length; i++) {
-    const text = document.createElement("p");
-    text.innerText = list.tasks[i].task;
+  for (let i = 0; i < myList.tasks.length; i++) {
+    console.log(myList.tasks.length);
 
     const item = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
-    if (list.tasks[i].completed) {
+    if (myList.tasks[i].completed) {
       item.classList.add("completed");
       item.classList.remove("uncompleted");
       checkbox.checked = true;
@@ -29,30 +27,30 @@ const render = (list, localStorage) => {
     }
 
     checkbox.addEventListener("click", (e) => {
-      list.tasks[i].completed = e.target.checked;
+      myList.tasks[i].completed = e.target.checked;
 
-      localStorage.setItem("todos", JSON.stringify(list.tasks));
+      localStorage.setItem("todos", JSON.stringify(myList));
 
-      if (list.tasks[i].completed) {
+      if (myList.tasks[i].completed) {
         item.classList.add("completed");
         item.classList.remove("uncompleted");
-        checkbox.checked = list.tasks[i].completed;
-        list.tasks[i].done;
-        let temp = list.tasks[i];
-        list.delete(i);
-        list.tasks.push(temp);
+        checkbox.checked = myList.tasks[i].completed;
+        myList.tasks[i].done;
+        let temp = myList.tasks[i];
+        myList.delete(i);
+        myList.tasks.push(temp);
       }
       else {
         item.classList.add("uncompleted");
         item.classList.remove("completed");
-        checkbox.checked = list.tasks[i].completed;
-        list.tasks[i].yet;
-        list.tasks[i].update;
+        checkbox.checked = myList.tasks[i].completed;
+        myList.tasks[i].yet;
+        myList.tasks[i].update;
       }
     });
 
-    // const text = document.createElement("p");
-    // text.innerText = list.tasks[i].task;
+    const text = document.createElement("p");
+    text.innerText = myList.tasks[i].task;
 
     item.addEventListener("click", () => {
       // make item editable
@@ -62,8 +60,10 @@ const render = (list, localStorage) => {
       // update upon Enter key press
       text.addEventListener("keydown", (event) => {
         if (event.keyCode === 13) {
-          list.tasks[i].task = (text.innerText);
+          myList.tasks[i].task = (text.innerText);
           text.blur();
+          localStorage.setItem("todos", JSON.stringify(myList));
+
         }
       });
 
@@ -80,9 +80,9 @@ const render = (list, localStorage) => {
 
 
     button.addEventListener("click", () => {
-      list.delete(i);
-      localStorage.setItem("todos", JSON.stringify(list.tasks));
-      render(list, localStorage);
+      myList.delete(i);
+      localStorage.setItem("todos", JSON.stringify(myList));
+      render();
     });
 
     item.appendChild(checkbox);
@@ -94,30 +94,36 @@ const render = (list, localStorage) => {
 }
 
 
-const addTodo = (list, value) => {
+const addTodo = (value) => {
   if (value) {
     let newTodo = new Task;
     newTodo.task = value;
-    list.create(newTodo);
-    localStorage.setItem("todos", JSON.stringify(list.tasks));
-    render(list, localStorage);
+    myList.create(newTodo);
+    localStorage.setItem("todos", JSON.stringify(myList));
+    render();
   }
 }
 
 
 const main = () => {
-
   makeNewList();
-
   const form = document.querySelector("#form");
   const input = document.querySelector("#input");
 
-  const myList = new ToDoList;
-
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    addTodo(myList, input.value);
+    addTodo(input.value);
   });
 }
+
+let todos = localStorage.getItem("todos");
+todos = JSON.parse(todos);
+
+const myList = new ToDoList;
+if (todos.tasks.length > 0) {
+  myList.tasks = todos.tasks
+};
+
+todos = JSON.stringify(todos);
 
 main();
