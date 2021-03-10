@@ -201,6 +201,8 @@ const main = () => {
 let todos = localStorage.getItem("todos");
 console.log(todos);
 todos = JSON.parse(todos);
+console.log(todos);
+
 
 const myList = new ToDoList;
 if (todos.tasks) {
