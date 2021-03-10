@@ -19,7 +19,7 @@ const makeNewList = () => {
   const input = document.createElement("input");
   input.setAttribute("type", "text");
   input.setAttribute("id", "input");
-  input.setAttribute("placeholder", "Enter task");
+  input.setAttribute("placeholder", "Enter a task:");
 
   const listTodo = document.createElement("div");
   listTodo.setAttribute("class", "list-todo");
