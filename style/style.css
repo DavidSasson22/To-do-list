@@ -49,6 +49,7 @@ input {
   color: #ffffff;
   padding: 0 8px 0 8px;
   font-size: 20px;
+  animation: blink 1.5s ease-in-out infinite alternate;
 }
 input:hover {
   cursor: pointer;
@@ -125,5 +126,14 @@ i {
   }
   .todo {
     width: 90vw;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
