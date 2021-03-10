@@ -62,9 +62,9 @@ const firstLoadUpdate = () => {
     });
 
     const button = document.createElement("button");
-    const trash = document.createElement("i");
-    trash.setAttribute("class", `fa fa-trash-o`);
-    trash.setAttribute("style", `font-size:32px`);
+    const trash = document.createElement("img");
+    trash.setAttribute("class", `trash`);
+    trash.setAttribute("src", `./fonts/trash-alt-regular.svg`);
 
     button.appendChild(trash);
 
@@ -162,9 +162,9 @@ const render = () => {
     });
 
     const button = document.createElement("button");
-    const trash = document.createElement("i");
-    trash.setAttribute("class", `fa fa-trash-o`);
-    trash.setAttribute("style", `font-size:32px`);
+    const trash = document.createElement("img");
+    trash.setAttribute("class", `trash`);
+    trash.setAttribute("src", `./fonts/trash-alt-regular.svg`);
 
     button.appendChild(trash);
 
