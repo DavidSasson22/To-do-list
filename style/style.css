@@ -29,6 +29,7 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   color: #ECE6D8;
+  box-shadow: 4px 4px #DBDABA;
 }
 h1 {
   margin-bottom: 0px;
@@ -58,6 +59,7 @@ input:hover {
   height: 60vh;
   background-color: #cbdfbd;
   overflow-x: scroll;
+  box-shadow: 4px 4px #DBDABA;
 }
 #todo {
   padding: 0 10px 0 10px;
