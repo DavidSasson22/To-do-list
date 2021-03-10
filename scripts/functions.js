@@ -199,6 +199,7 @@ const main = () => {
 }
 
 let todos = localStorage.getItem("todos");
+console.log(todos);
 todos = JSON.parse(todos);
 
 const myList = new ToDoList;
