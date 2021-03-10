@@ -211,7 +211,7 @@ if (todos !== null) {
   }
 }
 else {
-  main();
+  todos = myList;
 };
 
 todos = JSON.stringify(todos);
