@@ -205,7 +205,7 @@ console.log(todos);
 
 
 const myList = new ToDoList;
-if (todos.tasks !== null) {
+if (todos !== null) {
   if (todos.tasks.length > 0) {
     myList.tasks = todos.tasks
   }
