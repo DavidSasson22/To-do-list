@@ -11,6 +11,7 @@ body {
   --text-color: #333;
   color: var(--text-color);
   background-color: #f6f4d2;
+  max-width: 100vw;
 }
 .container {
   text-align: center;
@@ -116,4 +117,13 @@ input:hover {
 
 i {
   color:#f19c79;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 90vw;
+  }
+  .todo {
+    width: 90vw;
+  }
 }
