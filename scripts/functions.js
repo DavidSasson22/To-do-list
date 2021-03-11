@@ -112,7 +112,6 @@ const main = () => {
 let todos = localStorage.getItem("todos");
 todos = JSON.parse(todos);
 
-
 const myList = new ToDoList;
 if (todos !== null) {
   if (todos.tasks.length > 0) {
